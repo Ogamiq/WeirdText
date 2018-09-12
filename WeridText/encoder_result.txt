@@ -1,6 +1,6 @@
 
 ---weird---
-0 1 2 3 4 5 6,
-0 1 2 (3) 4!
+Tihs is a lnog looong test snncetee,
+with smoe big (biiiiig) wdros!
 ---weird---
 a big biiiiig is long looong sentence some test This with words
