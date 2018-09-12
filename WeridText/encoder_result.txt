@@ -1,6 +1,6 @@
 
 ---weird---
-'This is a long looong test sentence,\n'
-'with some big (biiiiig) words!'
+This is a long looong test sentence,
+with some big (biiiiig) words!
 ---weird---
 This a big biiiiig is long looong sentence some test with words
