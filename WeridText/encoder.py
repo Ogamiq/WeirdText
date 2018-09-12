@@ -6,6 +6,12 @@ import re
 
 
 def make_weird_sentence(line, words_from_line, weird_words):
+    """
+    Out of the line of text, words occuring in this line and corresponding weird wors 
+    makes and returns new line of text that has it's words replaced with weird words 
+    Example input: 'A very large sentence', ['A', 'very', 'large', 'sentence'], ['A', 'vrey', 'lrage', 'sneetcne']
+    Example output: 'A vrey lrage sneetcne'
+    """ 
     weird_sentence = line
     for i in range(len(words_from_line)):
         weird_sentence = weird_sentence.replace(words_from_line[i], weird_words[i])
@@ -13,6 +19,12 @@ def make_weird_sentence(line, words_from_line, weird_words):
 
 
 def make_weird_words(words_from_line):
+    """
+    Out of the list of words makes a list of weird words having corresponding inexes 
+    Weird word is the word with its inner letters shuffled. 
+    Example input: ['A', 'very', 'large', 'sentence']
+    Example output: ['A', 'vrey', 'lrage', 'sneetcne']
+    """
     weird_words = []
     for i in range(len(words_from_line)):
         weird_words.append('{0}'.format(i))
@@ -20,7 +32,15 @@ def make_weird_words(words_from_line):
 
     
 if __name__ == "__main__":
-
+    """
+    Based of the filename chosen using first command line argument 
+    produces output in a separate file 'encoder_result.txt'
+    that contains processed input file in a form:
+    ---weird---
+    processed lines
+    ---weird---
+    sorted list of all words used in the input file
+    """
     if len(sys.argv) != 2:
         print("usage: python encoder.py file_to_encode.txt")
         sys.exit(1)
