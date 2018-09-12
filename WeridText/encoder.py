@@ -33,9 +33,9 @@ def make_weird_words(words_from_line):
             letters_to_permute = list(words_from_line[i])[1: -1]
             permutation_counter = 0
             permuted_letters = np.random.permutation(letters_to_permute)
-            # while(permuted_letters == letters_to_permute and permutation_counter <= 5):
-            #     permuted_letters = np.random.permutation(letters_to_permute)
-            #     permutation_counter += 1
+            while((permuted_letters == letters_to_permute).all() and permutation_counter <= 5):
+                permuted_letters = np.random.permutation(letters_to_permute)
+                permutation_counter += 1
             weird_word = words_from_line[i][0] + "".join(permuted_letters) + words_from_line[i][len(words_from_line[i]) -1]
             weird_words.append(weird_word)
 
