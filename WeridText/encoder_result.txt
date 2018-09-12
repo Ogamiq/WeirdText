@@ -1,6 +1,6 @@
 
 ---weird---
-This is a long looong test sentence,
-with some big (biiiiig) words!
+0 1 2 3 4 5 6,
+0 1 2 (3) 4!
 ---weird---
-This a big biiiiig is long looong sentence some test with words
+a big biiiiig is long looong sentence some test This with words

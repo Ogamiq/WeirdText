@@ -5,6 +5,20 @@ import sys
 import re
 
 
+def make_weird_sentence(line, words_from_line, weird_words):
+    weird_sentence = line
+    for i in range(len(words_from_line)):
+        weird_sentence = weird_sentence.replace(words_from_line[i], weird_words[i])
+    return weird_sentence
+
+
+def make_weird_words(words_from_line):
+    weird_words = []
+    for i in range(len(words_from_line)):
+        weird_words.append('{0}'.format(i))
+    return weird_words
+
+    
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
@@ -19,13 +33,17 @@ if __name__ == "__main__":
             words_from_input_file = []
 
             for line in input_file:
-                words_from_input_file.extend(re.findall(r'(\w+)', line.replace(r'\n', ''), re.U))
-                output_file.writelines(line)
+                words_from_line = re.findall(r'(\w+)', line.replace(r'\n', ''), re.U)
+                words_from_input_file.extend(words_from_line)
+
+                weird_words = make_weird_words(words_from_line)
+                weird_sentence = make_weird_sentence(line, words_from_line, weird_words)
+                output_file.writelines(weird_sentence)
+
 
             output_file.writelines("\n---weird---\n")
-            output_file.writelines(" ".join(sorted(words_from_input_file)))
-            print(sorted(words_from_input_file, key=str.lower))
-            
+            output_file.writelines(" ".join(sorted(words_from_input_file, key=str.lower)))
+
     except IOError:
         print("Problem with reading / writing to the file")
         
