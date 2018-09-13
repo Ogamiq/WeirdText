@@ -5,6 +5,8 @@ import sys
 import re
 import numpy as np
 
+
+
 def make_weird_sentence(line, words_from_line, weird_words):
     """
     Out of the line of text, words occuring in this line and corresponding weird 
@@ -38,8 +40,6 @@ def make_weird_words(words_from_line):
                 permutation_counter += 1
             weird_word = words_from_line[i][0] + "".join(permuted_letters) + words_from_line[i][len(words_from_line[i]) -1]
             weird_words.append(weird_word)
-
-
     return weird_words
 
     
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
             output_file.writelines("\n---weird---\n")
             output_file.writelines(" ".join(sorted(words_from_input_file, key=str.lower)))
-
+                      
     except IOError:
         print("Problem with reading / writing to the file")
         
