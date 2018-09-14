@@ -1,2 +1,2 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut volutpat lorem, a luctus nunc. Vivamus ultrices eros nisi, nec vulputate dui ullamcorper volutpat. Vivamus condimentum, tellus et varius imperdiet, felis mauris pellentesque ipsum, nec atucor urna nisi sit amet velit. Nunc lacinia dolor non pharetra semper. Pellentesque mollis libero at risus pharetra, sed rutrum tellus mattis.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
