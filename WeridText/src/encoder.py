@@ -9,7 +9,7 @@ import numpy as np
 
 def make_weird_sentence(line, words_from_line, weird_words):
     """
-    Out of the line of text, words occuring in this line and corresponding weird 
+    Out of the line of text, words occuring in this line and corresponding weird words
     makes and returns new line of text that has it's words replaced with weird words 
     Example input: 'A very large sentence', ['A', 'very', 'large', 'sentence'], ['A', 'vrey', 'lrage', 'sneetcne']
     Example output: 'A vrey lrage sneetcne'
