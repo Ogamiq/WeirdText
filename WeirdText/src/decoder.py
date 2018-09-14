@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-import sys 
+import sys
 import re
-
 
 
 def make_words_translations(weird_words, normal_words):
@@ -17,7 +16,7 @@ def make_words_translations(weird_words, normal_words):
     assert(len(weird_words) == len(normal_words))
     translated_words = {}
     for k in weird_words:
-        if k in translated_words: 
+        if k in translated_words:
             continue
         else:
             for normal_word in normal_words:
@@ -60,17 +59,21 @@ if __name__ == "__main__":
             weird_text = []
             normal_words = []
             for line in input_file:
-                if '---weird---' in line:       
+                if '---weird---' in line:
                     weird_mark_counter += 1
                     continue
-                if weird_mark_counter == 1: weird_text.extend([x for x in line])      
-                if weird_mark_counter == 2: normal_words = line.split()              
-                if weird_mark_counter >= 3: raise ValueError
-        
+                if weird_mark_counter == 1:
+                    weird_text.extend([x for x in line])
+                if weird_mark_counter == 2:
+                    normal_words = line.split()
+                if weird_mark_counter >= 3:
+                    raise ValueError
+
         #TODO: add a result correctness evaluation here, as it's in the instructions
         # check for: empty arrays, invalid sorted word list, perhaps add a function evaluate_file_content that returns a boolean
 
-        weird_words = words_from_line = re.findall(r'(\w+)', ''.join(weird_text).replace(r'\n', ''), re.U)
+        weird_words = words_from_line = re.findall(
+            r'(\w+)', ''.join(weird_text).replace(r'\n', ''), re.U)
         translated_words = make_words_translations(weird_words, normal_words)
         decoded_text = multiple_replace(''.join(weird_text), translated_words)
 
@@ -80,9 +83,9 @@ if __name__ == "__main__":
 
     except IOError:
         print("Problem with reading / writing to the file")
-    
+
     except ValueError:
         print("The content of the file seems to be invalid -> too many ---weird--- magic values")
-    
+
     except AssertionError:
         print("Length of the 'weird words' and 'normal words' lists is not equal, that indicates problem with an input file")

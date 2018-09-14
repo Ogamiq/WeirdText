@@ -20,4 +20,5 @@ Requires libraries: re, sys, numpy, pytest
 
 ## Running the tests
 
-TODO: after the tests are written, write an explanation of how to write them.
+Go to the tests catalogue 
+To execute all of the tests (currently one) type: py.test -v
