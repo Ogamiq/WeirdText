@@ -15,7 +15,7 @@ You can find the results inside the results catalogue
 ### Prerequisites
 
 Requires python3 and pip being installed 
-Requires libraries: re, sys, numpy
+Requires libraries: re, sys, numpy, pytest
 
 
 ## Running the tests

@@ -74,6 +74,7 @@ if __name__ == "__main__":
 
             output_file.writelines("\n---weird---\n")
             output_file.writelines(" ".join(sorted(words_from_input_file, key=str.lower)))
+            output_file.close()
                       
     except IOError:
         print("Problem with reading / writing to the file")
