@@ -21,4 +21,5 @@ Requires libraries: re, sys, numpy, pytest
 ## Running the tests
 
 Go to the tests catalogue 
-To execute all of the tests (currently one) type: py.test -v
+
+To execute all of the tests type: py.test -v
