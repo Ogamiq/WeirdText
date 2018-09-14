@@ -26,6 +26,19 @@ def make_words_translations(weird_words, normal_words):
     return translated_words
 
 
+def multiple_replace(text, adict):
+    """
+    Based on a string and a dictionary of weird words and their translations
+    replaces every werid words in a text with it's translation
+    Proper usage of this function generates the final solution to the decoding problem. 
+    """
+    rx = re.compile('|'.join(map(re.escape, adict)))
+
+    def one_xlat(match):
+        return adict[match.group(0)]
+    return rx.sub(one_xlat, text)
+
+
 if __name__ == "__main__":
     """
     Based of the filename chosen using first command line argument 
@@ -40,6 +53,7 @@ if __name__ == "__main__":
     """
     if len(sys.argv) != 2:
         print("usage: python decoder.py ../data/to_decode*N*.txt, where *N* is a number of file to be decoded")
+        sys.exit(1)
     try:
         with open(sys.argv[1], "r") as input_file:
             weird_mark_counter = 0
@@ -58,12 +72,11 @@ if __name__ == "__main__":
 
         weird_words = words_from_line = re.findall(r'(\w+)', ''.join(weird_text).replace(r'\n', ''), re.U)
         translated_words = make_words_translations(weird_words, normal_words)
-        #print(translated_words)
+        decoded_text = multiple_replace(''.join(weird_text), translated_words)
 
         output_file = open("../results/decoded.txt", "w+")
-        output_file.write(str(translated_words))
-        #TODO: after the job is finished, add the writing to the file here
-
+        output_file.write(decoded_text)
+        output_file.close()
 
     except IOError:
         print("Problem with reading / writing to the file")
