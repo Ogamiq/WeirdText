@@ -1,6 +1,6 @@
 # Weird Text - recruitment project
 
-Python project that enable users to code and decode text in a files
+Python project that enable users to code and decode text in files
 
 ## Getting Started 
 
